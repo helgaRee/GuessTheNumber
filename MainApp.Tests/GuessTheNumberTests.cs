@@ -3,23 +3,6 @@
 public class GuessTheNumberTests
 {
 
-    //Skriv ett test som beskriver vad vi vill att koden ska göra, men som just nu inte kan passera
-
-
-    //Om det slumpade talet är 42 och jag gissar 50 ska resultatet vara "För högt".
-    //Hur ska metoden heta?
-
-    //Vilka parametrar behöver den ta emot?
-
-    //Vilken datatyp ska den returnera? (Text? Enum?)
-
-
-    //Metoden ska jämföra användarens gissning med det hemliga talet.
-    // vilka möjliga utfall? för högt, för lågt och rätt.
-    //ska returnera en string
-    //metoden ska jämföra det hemliga värdet + gissningen
-
-    //EX: Det hemliga talet är 42 och gissningen är 50, ska resultatet vara för högt.
     [Fact]
     public void GuessHigherThanSecretNumber_ShouldReturnTooHigh()
     {
