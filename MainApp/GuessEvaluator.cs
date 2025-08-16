@@ -14,4 +14,9 @@ public class GuessEvaluator
         }
         return "Rätt";
     }
+
+    public int CountGuesses()
+    {
+        return 3;
+    }
 }
