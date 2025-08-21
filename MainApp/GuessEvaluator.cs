@@ -2,6 +2,7 @@
 
 public class GuessEvaluator
 {
+    private int guessCounter;
     public static string CheckGuess(int secretNumber, int guess)
     {
         if (guess > secretNumber)
@@ -17,6 +18,7 @@ public class GuessEvaluator
 
     public int CountGuesses()
     {
-        return 3;
+        guessCounter++;
+        return guessCounter;
     }
 }
