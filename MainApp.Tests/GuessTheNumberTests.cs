@@ -51,4 +51,20 @@ public class GuessTheNumberTests
         //assert
         Assert.Equal("Rätt", result);
     }
+
+    //förväntat utfall: 
+    [Fact]
+    public void CountGuesses_ShouldReturn3()
+    {
+        //arrange
+        GuessEvaluator guessEvaluator = new GuessEvaluator();
+
+        //act
+        guessEvaluator.CountGuesses();
+        guessEvaluator.CountGuesses();
+        int result = guessEvaluator.CountGuesses();
+
+        //assert
+        Assert.Equal(3, result);
+    }
 }
