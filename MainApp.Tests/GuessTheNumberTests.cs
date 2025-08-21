@@ -12,11 +12,11 @@ public class GuessTheNumberTests
         int guess = 66;
 
         //Act - anropa metoden, skicka in värden och spara resuktatet i variabel
-        string result = GuessEvaluator.CheckGuess(secretNumber, guess);
+        GuessEvaluator.GuessResult result = GuessEvaluator.CheckGuess(secretNumber, guess);
 
 
         //Assert
-        Assert.Equal("För Högt", result);
+        Assert.Equal(GuessEvaluator.GuessResult.TooHigh, result);
         Console.WriteLine(result + "testar");
     }
 
@@ -29,10 +29,10 @@ public class GuessTheNumberTests
 
 
         //act - metoden som ger ett resultat
-        string result = GuessEvaluator.CheckGuess(secretNumber, guess);
+        GuessEvaluator.GuessResult result = GuessEvaluator.CheckGuess(secretNumber, guess);
 
         //assert
-        Assert.Equal("För Lågt", result);
+        Assert.Equal(GuessEvaluator.GuessResult.TooLow, result);
 
 
     }
@@ -46,10 +46,10 @@ public class GuessTheNumberTests
         int guess = 50;
 
         //act - get result
-        string result = GuessEvaluator.CheckGuess(secretNumber, guess);
+        GuessEvaluator.GuessResult result = GuessEvaluator.CheckGuess(secretNumber, guess);
 
         //assert
-        Assert.Equal("Rätt", result);
+        Assert.Equal(GuessEvaluator.GuessResult.Correct, result);
     }
 
     //förväntat utfall: 
@@ -60,9 +60,9 @@ public class GuessTheNumberTests
         GuessEvaluator guessEvaluator = new GuessEvaluator();
 
         //act
-        guessEvaluator.CountGuesses();
-        guessEvaluator.CountGuesses();
-        int result = guessEvaluator.CountGuesses();
+        guessEvaluator.GetGuessCount();
+        guessEvaluator.GetGuessCount();
+        int result = guessEvaluator.GetGuessCount();
 
         //assert
         Assert.Equal(3, result);

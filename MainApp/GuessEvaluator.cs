@@ -2,23 +2,27 @@
 
 public class GuessEvaluator
 {
-    private int guessCounter;
-    public static string CheckGuess(int secretNumber, int guess)
+    private int _guessCount;
+
+    public enum GuessResult
     {
-        if (guess > secretNumber)
-        {
-            return "För Högt";
-        }
-        if (guess < secretNumber)
-        {
-            return "För Lågt";
-        }
-        return "Rätt";
+        TooLow,
+        TooHigh,
+        Correct
+    }
+    public static GuessResult CheckGuess(int secretNumber, int guess)
+    {
+        if (guess > secretNumber) return GuessResult.TooHigh;
+
+        if (guess < secretNumber) return GuessResult.TooLow;
+
+        else return GuessResult.Correct;
+
     }
 
-    public int CountGuesses()
+    public int GetGuessCount()
     {
-        guessCounter++;
-        return guessCounter;
+        _guessCount++;
+        return _guessCount;
     }
 }
